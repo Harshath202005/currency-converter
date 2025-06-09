@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Currency Converter Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="theme-btn"><i class="fas fa-moon"></i></button>
+    </div>
+    
+    <div class="language-selector">
+        <select id="language-select">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+        </select>
+    </div>
+    
+    <div class="converter-container">
+        <h1 data-i18n="title">Currency Converter Pro</h1>
+        
+        <div class="amount-section">
+            <input type="number" id="amount" value="1" min="0">
+        </div>
+        
+        <div class="currency-selectors">
+            <div class="from-currency">
+                <select id="from-currency"></select>
+                <span id="from-flag"></span>
+                <button class="favorite-btn" data-currency="from"><i class="far fa-star"></i></button>
+            </div>
+            
+            <button id="swap-btn">⇄</button>
+            
+            <div class="to-currency">
+                <select id="to-currency"></select>
+                <span id="to-flag"></span>
+                <button class="favorite-btn" data-currency="to"><i class="far fa-star"></i></button>
+            </div>
+        </div>
+        
+        <div class="favorites-section">
+            <h3 data-i18n="favorites">Favorite Currencies</h3>
+            <div id="favorites-list"></div>
+        </div>
+        
+        <div class="result-section">
+            <div id="result">1 USD = 0.85 EUR</div>
+            <div id="rate-date">Rates updated: June 9, 2023</div>
+        </div>
+        
+        <button id="convert-btn" data-i18n="convert">Convert</button>
+        
+        <div class="chart-container">
+            <canvas id="chart"></canvas>
+        </div>
+        
+        <div class="news-section">
+            <h3 data-i18n="news">Currency News</h3>
+            <div id="news-feed"></div>
+        </div>
+    </div>
+    
+    <!-- Free CDN links for libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
